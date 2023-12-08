@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Number Guessing Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+		<nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+				<li><a href="gallery.html">Gallery </a></li>
+				<li><a href="form.html">Contact Us<a/></li>
+            </ul>
+        </nav>
+
+<script>
+  function guessTheNumberGame() {
+    // Generate a random number between 1 and 10
+    const secretNumber = Math.floor(Math.random() * 10) + 1;
+
+    let guessesLeft = 5;
+
+    while (guessesLeft > 0) {
+      // Ask the user to enter a guess
+      const userGuess = parseInt(prompt("Enter a number between 1 and 10:"));
+
+      // Check the user's guess
+      if (userGuess === secretNumber) {
+        alert("Congratulations, you guessed correctly!");
+        break;
+      } else if (userGuess > secretNumber) {
+        alert("You guessed too high, sorry!");
+      } else {
+        alert("You guessed too low, sorry!");
+      }
+
+      guessesLeft--;
+
+      if (guessesLeft === 0) {
+        alert("You have used up all your guesses, better luck next time ye fool. The secret number was " + secretNumber);
+      } else {
+        alert("You have " + guessesLeft + " guesses left.");
+      }
+    }
+
+    // Ask the user if they want to play again
+    const playAgain = prompt("Would you like to have another go? (y/n)").toLowerCase();
+
+    if (playAgain === 'y') {
+      guessTheNumberGame();
+    } else {
+      alert("Game Over");
+    }
+  }
+
+  // Start the game
+  guessTheNumberGame();
+</script>
+
+</body>
+</html>

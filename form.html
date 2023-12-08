@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        form {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            max-width: 400px;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="gallery.html">Gallery </a></li>
+				<li><a href="form.html">Contact Us<a/></li>
+				<li><a href="game.html">Game<a/></li>
+    <h1>Contact Us</h1>    <form id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required>
+		
+		 <label for="age">Age:</label>
+        <input type="text" id="age" name="age" required>
+
+        <label for="subject">Subject:</label>
+        <textarea id="subject" name="subject" rows="2" required></textarea>
+		
+		<label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        // JavaScript for form validation
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+			var age = document.getElementById('age').value;
+            var subject = document.getElementById('subject').value;
+            var message = document.getElementById('message').value;
+
+            if (!name || !email || !age || !subject || !message) {
+                alert('All fields must be filled out');
+                event.preventDefault();
+            }
+        });
+
+        // JavaScript for the mini game
+        function playGame() {
+            var randomNumber = Math.floor(Math.random() * 2); // Generates either 0 or 1
+
+            if (randomNumber === 1) {
+                document.getElementById('gameResult').innerText = 'You win!';
+            } else {
+                document.getElementById('gameResult').innerText = 'You lose!';
+            }
+        }
+    </script>
+</body>
+</html>
