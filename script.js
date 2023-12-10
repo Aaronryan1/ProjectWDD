@@ -1,8 +1,8 @@
-const randomNumber = Math.floor(Math.random() * 20) + 1;
+const randomNumber = Math.floor(Math.random() * 10) + 1;
 let guesses = 3;
 
 function checkGuess() {
-    const userGuess = parseInt(prompt('Guess a number between 1 and 20:'));
+    const userGuess = parseInt(prompt('Guess a number between 1 and 10:'));
     
     if (userGuess === randomNumber) {
         alert('Congratulations! You guessed the correct number.');
